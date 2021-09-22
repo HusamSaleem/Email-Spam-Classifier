@@ -31,27 +31,25 @@ def read_file(filename, id):
         
         write_to_csv(sub,payload,true_label[id])
 
-def write_header():
-    header = ["subject", "email", "class"]
-    with open("emails.csv", "w", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(header)
-
-
 def write_to_csv(sub, payload, label):
     with open("emails.csv", "a", encoding="utf-8") as f:
         payload = payload.replace('\n', "")
         writer = csv.writer(f)
         writer.writerow([sub, payload, label])
 
+def write_header():
+    header = ["subject", "email", "class"]
+    with open("emails.csv", "w", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
+
 def parse_emails():
     parse_label()
     write_header()
 
-    for i in range(1, 1828):
+    for i in range(1, 2501):
         path = ".\TR\TRAIN_%d.eml" % i
-        with open(path, encoding="utf-8") as f:
-            read_file(path, i - 1)
+        read_file(path, i - 1)
 
 
 if __name__ == "__main__":
