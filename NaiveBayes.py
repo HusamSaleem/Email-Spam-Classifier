@@ -53,8 +53,6 @@ class NaiveBayes():
         return clean_sentence
 
     def parse_emails(self, X, y):
-        stop_words = set(stopwords.words('english'))
-
         # Contain the word and their probability
         self._spam_words = {}
         self._not_spam_words = {}
