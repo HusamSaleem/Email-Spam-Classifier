@@ -66,7 +66,6 @@ def parse_emails():
         path = ".\TT\TEST_%d.eml" % i
         read_file(path, i - 1, "TT")
 
-
 if __name__ == "__main__":
     parse_emails()
     
