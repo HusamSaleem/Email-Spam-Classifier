@@ -5,7 +5,6 @@ class NaiveBayes():
     # Takes the data and parses it into spam and not spam probability
     def fit(self, X, y):
         self.parse_emails(X, y)
-        pass
 
     # Initial guess * words probs
     def predict(self, X):
