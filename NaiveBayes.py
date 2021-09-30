@@ -38,9 +38,9 @@ class NaiveBayes():
             notspam_score += np.log(initial_not_spam_guess)
 
             if (spam_score > notspam_score):
-                y_pred[i] = 1
-            else:
                 y_pred[i] = 0
+            else:
+                y_pred[i] = 1
             
             i += 1
         return y_pred
@@ -62,7 +62,7 @@ class NaiveBayes():
             clean_sentence = self.get_as_arr(email)
 
             for word in clean_sentence:
-                if (y[i] == 0):
+                if (y[i] == 1):
                    if not word in self._not_spam_words:
                         self._not_spam_words[word] = 1
                    else:
